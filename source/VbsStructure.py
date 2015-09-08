@@ -50,10 +50,10 @@ class VbsStructure:
         return self.sectorProperty
 
     def PropertyName(self,name):
-        return '^[\s\p{Zs}]*(?i)property[\s\p{Zs}]+[lgs]et[\s\p{Zs}]+'+ name +'[\s\p{Zs}]*(?=\(|\')'
+        return ''.join(('^[\s\p{Zs}]*(?i)property[\s\p{Zs}]+[lgs]et[\s\p{Zs}]+',name , '[\s\p{Zs}]*(?=\(|\')'))
 
     def ClassName(self, name):
-        return '^[\s\p{Zs}]*(?i)class[\s\p{Zs}]+' + name + '[\s\p{Zs}]+'
+        return ''.join(('^[\s\p{Zs}]*(?i)class[\s\p{Zs}]+' , name , '[\s\p{Zs}]+'))
 
     def nameofClass(self):
         """it returns the definition name of class used in VBScript."""
@@ -64,14 +64,14 @@ class VbsStructure:
         return self.sectorFunction
 
     def FunctionName(self,name):
-        return '^[\s\p{Zs}]*(?i)(private|public)?[\s\p{Zs}]*function[\s\p{Zs}]+'+ name +'[\s\p{Zs}]*(?=\(|\')'
+        return ''.join(('^[\s\p{Zs}]*(?i)(private|public)?[\s\p{Zs}]*function[\s\p{Zs}]+' , name , '[\s\p{Zs}]*(?=\(|\')' ))
 
     def nameofSub(self):
         """it returns the definition name of sub procedure used in VBScript."""
         return self.sectorSub
 
     def SubName(self,name):
-        return '^[\s\p{Zs}]*(?i)(private|public)?[\s\p{Zs}]*sub[\s\p{Zs}]+'+ name +'[\s\p{Zs}]*(?=\(|\')'
+        return ''.join(('^[\s\p{Zs}]*(?i)(private|public)?[\s\p{Zs}]*sub[\s\p{Zs}]+' , name , '[\s\p{Zs}]*(?=\(|\')'))
 
     def nameofComment(self):
         """it returns the keyword of comment we defined ourselves."""

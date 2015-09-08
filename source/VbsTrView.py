@@ -36,12 +36,6 @@ class MyTreeView:
         self.__menu.add_command(label="reload file", command=self.__reload)
         self.treeView.bind('<Button-3>' , self.__showMenu)
     def __showMenu(self,event):
-##        mysel = self.treeView.selection()
-##        if mysel=="":
-##            print("OOPs, nothing is selected")
-##            return
-##        if len(self.treeView.get_children())<=0:
-##            return
         if not os.path.isfile(self.fullPath):
             return
         self.__menu.post(event.x_root,event.y_root)
@@ -67,7 +61,7 @@ the data in the text UI. """
             self.text.delete('1.0',END)
         else:
             self.text.delete('1.0',END)
-            self.text.insert('1.0',mt[1]+'\r\n'+mt[-1])
+            self.text.insert('1.0',''.join((mt[1] , '\r\n' , mt[-1])))
 ##            self.text.insert('end', mt[-1])
         self.text.config(state=DISABLED)
 ##        self.text.see('end')

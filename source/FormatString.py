@@ -120,11 +120,11 @@ one string, the order will be 1) description, 2) definition, 3) parameter descri
             if mystr.find(self.__Header_Detail)>=0:
                 mystr = mystr.replace(self.__Header_Detail,'')
             if mystr.find(self.__Header_Param)>=0:
-                mystr = mystr.replace(self.__Header_Param,self.__Header_Param[1:]+':')            
+                mystr = mystr.replace(self.__Header_Param,''.join((self.__Header_Param[1:],':')))            
             if mystr.find(self.__Header_Return)>=0:
-                mystr = mystr.replace(self.__Header_Return,self.__Header_Return[1:]+':')
+                mystr = mystr.replace(self.__Header_Return,''.join((self.__Header_Return[1:],':')))
             if mystr.find(self.__Header_Todo)>=0:
-                mystr = mystr.replace(self.__Header_Todo,self.__Header_Todo[1:]+':')
+                mystr = mystr.replace(self.__Header_Todo, ''.join((self.__Header_Todo[1:],':')))
             if mystr.find(self.__Header_Reference)>=0:
                 mystr = mystr.replace(self.__Header_Reference , 'Reference:')
             if mystr.find(self.__Header_Define)>=0:

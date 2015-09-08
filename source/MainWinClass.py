@@ -131,7 +131,7 @@ view, at the same time, it enable the menu 'select for'. """
         dlg=Toplevel()
         dlg.title('About...')
         dlg.resizable(width=False, height=False)
-        Label(dlg,text="This is a tiny tool to scan UFT lib file.\r\nThe version is " + self.__version + ".\r\nAuthor is Bob Gu.").pack()
+        Label(dlg,text=''.join(("This is a tiny tool to scan UFT lib file.\r\nThe version is " , self.__version , ".\r\nAuthor is Bob Gu."))).pack()
         Button(dlg,text='Close',command=dlg.destroy).pack()
         dlg.focus_set()
         dlg.grab_set()
