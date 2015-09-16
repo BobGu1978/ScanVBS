@@ -9,7 +9,7 @@ class VbsStructure:
         self.attributePrivate = '^[\s\p{Zs}]*(?!)private'
         self.patternSection = '.*(?=\(|\')' #this pattern is to match the string which only has ( or ' at the end of the char[a-zA-Z]
         self.sectorProperty = 'property'
-        self.patternProperty = '^[\s\p{Zs}]*(?i)property[\s\p{Zs}]+[lgs]et'
+        self.patternProperty = '^[\s\p{Zs}]*(?i)(public|private)?[\s\p{Zs}]*property[\s\p{Zs}]+[lgs]et'
         self.flagProperty = 1
         self.sectorClass = 'class'
         self.patternClass = '^[\s\p{Zs}]*(?i)class\s'
